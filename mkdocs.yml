@@ -2,5 +2,6 @@ site_name: Wiki
 nav:
   - Home: index.md
   - Mkdocs: mkdocs.md
-  - DevConfig: webDevInit.md
+  - DevInitConfig: webDevInit.md
+  - MeterialUI: meterialUI.md
 theme: readthedocs
