@@ -1,8 +1,11 @@
 # REACT-NATIVE  
 
+
+## 설치 및 환경설정
+
  - 페이스북에서 만든 오픈 소스 모바일 응용 프로그램.(크로스 플랫폼)
- - 네이티브코드-> js번들 -> 브릿지 -> Native thread
-                        -> Js thread
+ - 네이티브코드 > js번들 > 브릿지 > Native thread
+                                > Js thread
  - 번들만드는방법
   1. Expo CLI
     - 장점
@@ -28,9 +31,9 @@
     - npm(node package manager)
     - 안드로이드 스튜디오 -Android Debug Bridge version 1.0.41 adb
     - 자바
-    - XCode -> mac에서설치가능 ios용프로그램
+    - XCode > mac에서설치가능 ios용프로그램
     - vscode
-    - cocoapod -> mac에서설치가능 ios용프로그램
+    - cocoapod > mac에서설치가능 ios용프로그램
     - React native cli
 
   - 새프로젝트 생성
@@ -41,7 +44,7 @@
     - ios
       1. npm start
       2. react-native run-ios (새로고침 cmd +r, cmd + d 디버깅)
-      3. react-native run-ios --simulator="iPhone 8 Plus" (다른 모델 버전 구동시 )
+      3. `react-native run-ios --simulator="iPhone 8 Plus"` (다른 모델 버전 구동시 )
     - android
       1. android 에뮬레이터 실행 후
       2. react-native run-andorid (r 새로고침, cmd +m 디버깅)
@@ -50,6 +53,7 @@
     -  bash_profile 환경변수적용
        -  source ~/.bash_profile
 
+## 코드
 
   - View
     - 화면을 채우는 컨테이너 같은 역활. <div> 와비슷.
@@ -99,8 +103,8 @@
   - `React-native community 깃헙 !!! -필요한것들 다운받아사용`
   
   -  Slider
-     -  npm install @react-native-community/slider --save
-     -  cd ios -> npx pod-install
+     -  `npm install @react-native-community/slider --save`
+     -  cd ios > npx pod-install
      -  props
         -  value:초기값
         -  minimumValue: 최소값
@@ -127,3 +131,5 @@
       - animationType
         - none, slide, fade
       - onShow: 모달이 보여질때 발생하시는 이벤트
+
+## 심화

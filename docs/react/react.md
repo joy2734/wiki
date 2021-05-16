@@ -1,12 +1,12 @@
 # React 개념정리
 
-# React 컴포넌트가 업데이트 되는 경우
+## React 컴포넌트가 업데이트 되는 경우
  1. props가 변경될때?
  2. state가 변경될때
  3. 부모 컴포넌트가 re-rendering될때
  4. this.forceUpdate로 강제로 랜더링 할때
 
-# 컴포넌트 Life Cycle
+## 컴포넌트 Life Cycle
 - 마운팅 이벤트
   1. componentWillMount - React 엘리먼트가 실제 DOM에 곧 추가 될 것을 알려준다.
   2. componentDidMount - 엘리먼트가 실제 DOM에 추가한 시점

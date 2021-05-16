@@ -1,11 +1,12 @@
 site_name: Wiki
 nav:
-  - Home: index.md
-  - Mkdocs: mkdocs.md
-  - DevInitConfig: webDevInit.md
-  - MaterialUI: material/materialui.md
-  - MaterialUITheme: material/theming.md
-  - React: react/react.md
-  - JavaScript: js/javascript.md
-  - ReactNative: reactnative/reactnative.md
+ - Home: index.md
+ - Mkdocs: mkdocs.md
+ - DevInitConfig: webDevInit.md
+ - MaterialUI: material/materialui.md
+ - MaterialUITheme: material/theming.md
+ - React: react/react.md
+ - JavaScript: js/javascript.md
+ - ReactNative: reactnative/reactnative.md
 theme: readthedocs
+encoding: UTF-8
