@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>MeterialUI - Wiki</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "MeterialUI";
+    var mkdocs_page_input_path = "materialUI.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mkdocs/">Mkdocs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../webDevInit/">DevInitConfig</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">MeterialUI</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install">Install</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#responsive-meta-tag">Responsive meta Tag</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#withstyles">withStyles 사용</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#makestyles">makeStyles 사용</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cssbaseline">CssBaseline</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#appbar">AppBar</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fade">Fade</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#inputbase">InputBase</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#iconbutton">IconButton</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#material-icons">Material Icons</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../react/">React</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../javascript/">JavaScript</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../react-native/">ReactNative</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>MeterialUI</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="materialui-v411">MaterialUI (v4.11)</h1>
+<h2 id="install">Install</h2>
+<ul>
+<li>Core
+<br></li>
+</ul>
+<p><code>yarn add @material-ui/core</code></p>
+<ul>
+<li>Font Icons
+<br></li>
+</ul>
+<pre><code class="language-html">    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot; /&gt;
+</code></pre>
+<ul>
+<li>Icons
+<br></li>
+</ul>
+<p><code>yarn add @material-ui/icons</code></p>
+<p><br>
+<br></p>
+<h2 id="usage">Usage</h2>
+<ul>
+<li>'@material-ui/core/{컴포넌트명}' 임포트 후 사용. </li>
+</ul>
+<pre><code class="language-javascript">import Button from '@material-ui/core/Button';
+</code></pre>
+<p><br></p>
+<h2 id="responsive-meta-tag">Responsive meta Tag</h2>
+<p>Material UI는 모바일환경에서 우선적으로 개발되었기 때문에 헤더안에 responsive viewport meta tag 를 추가해야한다.</p>
+<pre><code class="language-javascript">&lt;meta
+  name=&quot;viewport&quot;
+  content=&quot;minimum-scale=1, initial-scale=1, width=device-width&quot;
+/&gt;
+</code></pre>
+<p><br>
+<br></p>
+<h2 id="withstyles"><code>withStyles</code> 사용</h2>
+<ul>
+<li>styles 객체를 만든후 with 스타일로 해당스타일속성을 적용 <strong>this,props.classes</strong>로 사용한다.</li>
+</ul>
+<pre><code class="language-javascript">import React, { Component } from 'react';
+import Button from '@material-ui/core/Button'
+import { withStyles } from '@material-ui/core/styles';
+const styles  = {
+  root: {
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    border: 0,
+    borderRadius: 3,
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    margin : '10px'
+  },
+};
+class StyleTutorial1 extends Component {
+  render() {
+    const {classes} = this.props;
+    return (
+      &lt;div&gt;
+        &lt;Button className={classes.root}&gt;Button with Style&lt;/Button&gt;
+        &lt;Button className={this.props.classes.root}&gt;Button with Style&lt;/Button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+export default  withStyles(styles)(StyleTutorial1);
+</code></pre>
+<h2 id="makestyles"><code>makeStyles</code> 사용</h2>
+<ul>
+<li>@material-ui/core/styles에 makeStyles, createStyles 사용하여 스타일을 정의하고 컴포넌트 안에서 해당설정을 적용시켜사용한다. Material UI는 직관적으로 사용자 정의 스타일을 적용할 수 있도록 makeStyles React hook을 제공한다.</li>
+</ul>
+<pre><code class="language-javascript">import { makeStyles, createStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme: Theme) =&gt; createStyles({
+  root: {
+    backgroundColor: theme.color.red,
+  },
+}));
+
+export default function MyComponent {
+  const classes = useStyles();
+  return &lt;div className={classes.root} /&gt;;
+}
+</code></pre>
+<p><br></p>
+<h2 id="cssbaseline">CssBaseline</h2>
+<p><br>
+ - CssBaseline은 어떤 브라우저에서 돌아가느냐 상관없이 일괄적으로 스타일이 적용되게 해주는 컴포넌트이다. 해당 컴포넌트는 css를 전역에서 정규화시켜주는 것이 권장된다. 우선 최상단에 CssBaseLine 컴포넌트를 React App 최상위 컴포넌트에 추가해줘야한다.</p>
+<pre><code class="language-javascript">import React from &quot;react&quot;
+import CssBaseline from &quot;@material-ui/core/CssBaseline&quot;
+
+export default function App() {
+  return (
+    &lt;&gt;
+      &lt;CssBaseline /&gt;
+      {/* 다른 컴포넌트 */}
+    &lt;/&gt;
+  )
+}
+</code></pre>
+<p><br></p>
+<h2 id="appbar">AppBar</h2>
+<ul>
+<li>현재 스크린과 관계된 행동/정보들을 보여준다.(상단정보 바)</li>
+</ul>
+<p><br></p>
+<h2 id="fade">Fade</h2>
+<ul>
+<li>화면 전이(나타나고/사라지고)가 쉽게 동작하도록 만들어주는 컴포넌트</li>
+<li>in 속성 true시 감춰진다.</li>
+<li>timeout 속성 사용시 사라지는 시간을 조절할 수 있다.<br />
+<code>{ enter: duration.enteringScreen, exit: duration.leavingScreen,}</code></li>
+</ul>
+<pre><code class="language-javascript">export default Main() {
+  return (
+    &lt;Fade in={check}&gt;
+      &lt;MyComponent /&gt;
+    &lt;/Fade&gt;
+  );
+}
+</code></pre>
+<h2 id="inputbase">InputBase</h2>
+<ul>
+<li></li>
+</ul>
+<h2 id="iconbutton">IconButton</h2>
+<ul>
+<li>color: 컴포넌트의 테마 컬러. (default| inherit| primary| secondary)</li>
+<li>disabled: true시 버튼사용이 불가능하다.</li>
+<li>edge : 테두리 크기와 모양을 손상시키지않고 아이콘 왼쪽/오른쪽을 콘텐츠 위/아래에 정렬하는데 도움을준다.</li>
+</ul>
+<pre><code class="language-html"> &lt;IconButton edge=&quot;end&quot; className={classes.menuButton} color=&quot;inherit&quot; aria-label=&quot;menu&quot;&gt;
+    &lt;MenuIcon /&gt;
+ &lt;/IconButton&gt;
+</code></pre>
+<h2 id="material-icons">Material Icons</h2>
+<ul>
+<li>아이콘들을 해당 <a href="https://material-ui.com/components/material-icons/">https://material-ui.com/components/material-icons/</a>에서 아이콘을 import 하여 사용할 수 있다.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../react/" class="btn btn-neutral float-right" title="React">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../webDevInit/" class="btn btn-neutral" title="DevInitConfig"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../webDevInit/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../react/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

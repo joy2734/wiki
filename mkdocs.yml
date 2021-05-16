@@ -3,5 +3,8 @@ nav:
   - Home: index.md
   - Mkdocs: mkdocs.md
   - DevInitConfig: webDevInit.md
-  - MeterialUI: meterialUI.md
+  - MeterialUI: materialUI.md
+  - React: react.md
+  - JavaScript: javascript.md
+  - ReactNative: react-native.md
 theme: readthedocs
