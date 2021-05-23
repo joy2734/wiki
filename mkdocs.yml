@@ -9,5 +9,6 @@ nav:
  - JavaScript: js/javascript.md
  - ReactNative: reactnative/reactnative.md
  - SocketIO: socket/socketio.md
+ - Electron: electron/electronDocs.md
 theme: readthedocs
 encoding: UTF-8

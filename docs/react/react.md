@@ -54,3 +54,131 @@
 
   - 정리를 이용하는 useEffect
     - componentDidMount/componentWillUnMount 좀더작성필요....
+
+
+- https://reactjs.org/docs/hooks-reference.html
+- 
+## BasicHook
+
+  - useState : 상태유지값과 그값을 갱신하는 함수를 반환함.
+    - useState함수 파라미터:초기값
+    - count: 상태값
+    - setCount: 상태값을 갱신하는함수
+  - state hook을 현재의 state와 동일한 값으로 갱신하는경우에 react는 랜더링을 회피하고 그 처리를 종료함.
+  ```javascript
+  const [count, setCount] = useState(0);
+
+  //갱신함수사용시 prevState를 인자로받을수있다.
+  setCount(prevState =>{
+    return {...prevState, ...updatedValues};
+  });
+
+  //초기 state를 함수로도정의가능
+  const [state, setState] = useState(() => {
+    const initialState = someExpensiveComputation(props);
+    return initialState;
+  });
+
+  ```
+  - useEffect
+    - 화면이 랜더링이 완료 된 후에 실행되는 함수.
+    - 기본적으로 모든 랜더링이 완료된 후에 수행되지만, 어떤값이 변경될때만 해당함수가 실행되게 할 수도있다.
+    - 실행타이밍
+      - 레이아웃 배치/그리기를 완료한 후 발생
+    - 사용자에게 노출되는 DOM 변경은 다그리기 이전에 동기화 해야하므로 `useLayoutEffect` 사용하여 처리할 수 있다.
+    - effect는 의존성중 하나라도 변경된다면 항상 재생성되기때문에 과도한 작업이 이루어질수있다. 이를 위해서 두번째인자로 배열에 특정 값이 변경될때만 efftect 함수가 실행될 수 있도록 할 수있다.
+      - 해당effect 한번만 수행하길원한다면 [] 을 두번째 인자로 전달
+  
+  ```javascript
+    useEffect(
+      () => {
+        const subscription = props.source.subscribe();
+        return () => {
+          subscription.unsubscribe();
+        };
+      },
+      [props.source],
+    );
+  ```
+  
+  - useContext  
+    - React.createContext Api를 좀더쉽게사용.///나중에정리
+  
+## Additional Hooks
+
+  - useReducer
+    - 첫번째 인자 리듀서함수, 두번째인자 초기 상태값
+    - or 첫번째 리듀서, 두번째 함수인자 초기값, 세번쨰 함수
+      - ex)  const [state, dispatch] = useReducer(reducer, initialCount, init);
+    - 반환 인자 state, dispatch
+```javascript
+const initialState = {count: 0};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return {count: state.count + 1};
+    case 'decrement':
+      return {count: state.count - 1};
+    default:
+      throw new Error();
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return (
+    <>
+      Count: {state.count}
+      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+      <button onClick={() => dispatch({type: 'increment'})}>+</button>
+    </>
+  );
+}
+```
+
+  - useCallback
+    - 불필요한 re-rednering을 방지
+    - useCallback(fn, deps)는 useMemo(()=> fn, deps) 와동일
+    - useCallback안에서 사용되는 props나 state속성을 두번째 배열인자에 넣어줘야함 
+    - 특정 상태의 변경의 경우에만 해당 함수가 재생성됨.
+    - `함수`를 반환
+```javascript
+const memoizedCallback = useCallback(
+  () => {
+    doSomething(a, b);
+  },
+  [a, b],
+);
+```
+  - useMemo
+    - 모든 랜더링시 고비용 계산방지
+    - `값`을반환
+```javascript
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+```
+
+  - useRef
+    - useRef는 .current 프로퍼티로 전달된 인자(initialValue)로 초기화된 변경 가능한 ref 객체를 반환
+    - 순수 자바스크립트 객체를 생성해준다.
+```javascript
+function TextInputWithFocusButton() {
+  const inputEl = useRef(null);
+  const onButtonClick = () => {
+    // `current` points to the mounted text input element
+    inputEl.current.focus();
+  };
+  return (
+    <>
+      <input ref={inputEl} type="text" />
+      <button onClick={onButtonClick}>Focus the input</button>
+    </>
+  );
+}
+```
+
+  - useImperativeHandle
+
+  - useLayoutEffect
+  
+  - useDebugValue

@@ -121,6 +121,7 @@
   
   - Image (react-native 모듈)
     - source : 경로설정 or 임포트로 이미지가져오기 or {uri:'url경로'}
+    - source에 inline으로줄때는 source={require('상대경로')}
     - style 설정
     - resizeMode: cover,contain,stretch,repeat,center
     - onLoadEnd: 이미지로딩이 끝낫후 트리거 해주는 이벤트
@@ -132,4 +133,69 @@
         - none, slide, fade
       - onShow: 모달이 보여질때 발생하시는 이벤트
 
-## 심화
+## Navigator
+
+  - React Navigation(React-Native 공식문서 에서 해당 라이브러리 사용하라고 명시되어있음, 강의에서는 v5사용)
+    - 설치
+      - npm install @react-navigation/native
+      - npm install react-native-reanimated react-native-gesture-handler react-native-screens react...(공식문서참조.)
+        - ios
+          - cd ios > npx pod-install ios
+      - App.js위에
+        - react-native-gesture-handle 임포트
+      - npm install @react-navigation/stack - Stack Navigator 설치
+
+  - Stack Navigator
+    - NavigationContainer - 네비게이션 구조/상태 관리 컴포넌트
+    - createStackNavigator - 
+    - 
+```javascript
+  const Stack = createStackNavigator();
+
+  .. extends Component{
+    <NavigationContainer>
+      <Stack.Navigator>
+          <Stack.Screen name="Home" component={HomeComponent}>
+          <Stack.Screen name="User" component={UserComponent}>
+      </Stack.Navigator>
+    </NavigationContainer>
+  }
+
+```
+  - 버튼클릭시 화면이동
+    - this.props.navigation.navigate(Stack Screen의 이름)
+  - 화면이동시 params 넘기는법
+    - this.props.navigation.navigate(Stack Screen의 이름, params)
+    - 받는쪽 
+  - Stack.Navigator initialRouteName 속성에 지정하는컴포넌트가 초기에 나옴
+  - Strack.Screen initialParams로 초기 파라미터 설정가능 (navigator시 아무것도 넘기지않아도)
+
+## Header Bar 설정
+
+  - Strack.Screen `options` 속성 헤더바 title 설정 가능
+  - 해당화면에서 `this.props.navigation.setOptions({title:'11', headerStyle:{스타일정의},headerTintColor:'red', headerTitleStyle:{택스트스타일설정}})` 로 해당 속성 상태 변경가능
+  
+  - 공통적으로 헤더바 스타일을 적용하는법
+    - Stack.Navigator 의 `screenOptions` 속성사용 위에 객체 키는 동일...
+    - 공통으로 적용하고 다른스타일로 적용할 컴포넌트만 setOptions or Strack.screen options 를 사용하여 특정화면만 커스터마이징.
+  - 헤더 바에 그림삽입
+    - 해당 강의 `flaticon` 사용하여 삽입하였음
+    - Stack.Screen 안에 options={headerTitle: `컴포넌트`}
+      - 뒤로가기버튼도 컴포넌트 이미지가 들어가는걸 막고싶을때는 해당화면의 this.props.navigator.setOptions({headerBackTitle}) headerBackTitle속성 설정
+  
+  - HeaderBar 버튼추가
+    - `headerRight` jsx로 버튼추가
+    - 해당 구현시 상단 오른족에 버튼이 추가된다.
+    ```javascript
+    <Strack.Screen
+      headerRight:()=>(
+        <Button
+          title="Info"
+          onPress={()=> 함수정의}
+        >
+        </Button>
+      )
+    >
+    </Strack.Screen>
+    ```
+    - 더많은 옵션이 있음 레퍼런스 참조.
