@@ -8,5 +8,6 @@ nav:
  - React: react/react.md
  - JavaScript: js/javascript.md
  - ReactNative: reactnative/reactnative.md
+ - SocketIO: socket/socketio.md
 theme: readthedocs
 encoding: UTF-8
