@@ -1,5 +1,61 @@
 # React 개념정리
 
+## setState
+ - state 변경시 push 보단 ...state 스프레드 연산자나 concat을 사용하는것이 좋다.
+
+## Prototypes
+
+ - prop 속성에 대한 기본자료형과 대응되는 type을 제공할수있다.
+ - `isRequired` 를사용하면 필수로 전달
+ - `defaultProps`를 통하여 디폴트값지정가능
+```javascript
+import ProtoTypes from 'prop-types';
+
+ SomeComponent.propTypes = {
+   someString: PropTypes.string.isRequired,
+   someNumber: PropTypes.number.isRequired,
+   someBool: PropTypes.bool,
+   someArray: PropTypes.array,
+   someArrayA: PropTypes.arrayOf(PropTypes.number),//배열안 요소지정
+
+   someObject: PropTypes.object,
+   someObjectA : PropTypes.objectOf(PropTypes.number),//배열안요소지정
+   complexObject: PropTypes.shape({//객체에 대한속성 디테일하기 지정
+     name: PropTypes.string,
+     age: PropTypes.number
+   })
+   someFunc: PropTypes.func,
+   someSymbol: PropTypes.symbol
+
+ }
+
+ SomeComponent.defaultProps = {
+   someString : 'test'
+ }
+```
+ - 지정된값만 사용하도록 지정할수도있음
+
+ ```javascript
+ import ProtoTypes from 'prop-types';
+
+ SomeComponent.propTypes = {
+   //특정값만 넣을수있음
+   dayOfWeek: PropTypes.oneOf(['월','화','수','목','금','토']),
+   
+   //특정타입만 넣을수있음
+   union: Proptypes.oneOfType([
+     PropTypes.string,
+     PropTypes.number,
+     PropTypes.instanceOf(Hello)
+   ]),
+
+  //아무것이나가능
+   any: PropTypes.any
+ }
+
+ ```
+
+
 ## React 컴포넌트가 업데이트 되는 경우
  1. props가 변경될때?
  2. state가 변경될때
