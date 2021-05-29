@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Electron - Wiki</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Electron";
+    var mkdocs_page_input_path = "electron/electronDocs.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../mkdocs/">Mkdocs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../webDevInit/">DevInitConfig</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../material/materialui/">MaterialUI</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../material/theming/">MaterialUITheme</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../react/react/">React</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../js/javascript/">JavaScript</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../reactnative/reactnative/">ReactNative</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../socket/socketio/">SocketIO</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Electron</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">초기세팅</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#api">일렉트론 API</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">설정</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">일렉트론 배포</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#app">App 구조</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#renderer">메인/ Renderer 과정</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#api_1">API</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#nodejs-api">Node.js API</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#notification">Notification</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#recent-documents">Recent Documents</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#custom-dock-menu">Custom Dock Menu</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#window-taskbar">Window TaskBar</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#onlineoffline-event-detection">Online/Offline Event Detection</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#native-file-drag-drop">Native File Drag &amp; Drop</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Electron</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">일렉트론</h1>
+<h2 id="_2">초기세팅</h2>
+<ul>
+<li>main": "src/index.js",//보통 일렉트론 메인process 소스명은 main.js</li>
+<li>dependencies 
+    "electron": "6.0.0",
+    "electron-builder": "21.2.0",
+    "eslint": "6.1.0",
+    "eslint-config-prettier": "6.0.0",
+    "eslint-plugin-prettier": "3.1.0",
+    "prettier": "1.18.2"
+    "electron-util": "0.12.1"
+  }</li>
+<li>script
+    "start": "electron src/index.js",
+    "final": "electron final/index.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"</li>
+</ul>
+<h2 id="api">일렉트론 API</h2>
+<ul>
+<li>해당 api 사용시 웹에서는 구현할 수 없는 부분이 구현가능하다.</li>
+<li>알림</li>
+<li>기본파일 드래그 앤드롭</li>
+<li>맥OS 다크모드</li>
+<li>맞춤형 메뉴</li>
+<li>강력한 키보드단축키</li>
+<li>시스템 대화상자</li>
+<li>애플리케이션 트레이-하단 앱작은아이콘?</li>
+<li>시스템정보</li>
+</ul>
+<h2 id="_3">설정</h2>
+<ul>
+<li>소스참고. </li>
+</ul>
+<h2 id="_4">일렉트론 배포</h2>
+<ul>
+<li>일렉트론 빌더 vs 포지</li>
+<li>
+<p>일렉트론 빌더 - 독립적인 빌드도구</p>
+</li>
+<li>
+<p>설정</p>
+</li>
+<li>appId -  app 고유식별자
+             - mac - CFBundle Identifier
+             - win - AppUser ModeId
+             - 역방향 DNS 형식
+               - ex)도메인 jseverywhere.io 인회사에 [app명] -&gt; io.jseverywhere.[app명]</li>
+<li>productName<ul>
+<li>제품명?</li>
+</ul>
+</li>
+</ul>
+<h2 id="app">App 구조</h2>
+<ul>
+<li>구성</li>
+<li>크로미넘 - 웹컨텐츠를 보여준다.</li>
+<li>Nodejs - 시스템동직/내부파일시스템 동작</li>
+<li>custom Api - 자주쓰이는 네이티브 func</li>
+</ul>
+<h2 id="renderer">메인/ Renderer 과정</h2>
+<ul>
+<li>Eletron 2가지 타입</li>
+<li>Main<ul>
+<li>메인은 <code>BrowserWindow</code> 인스턴스들로부터 만들어지는 웹페이지를 만들어준다. 각 <code>BrowserWindow</code> 인스턴스는 Renderer 프로세스안에 웹페이지를 동작시킨다. <code>BrowserWindow</code>가 destroy될때 각 <code>BrowserWindow</code>에 대응하는 Renderer 프로세스도 종료된다.</li>
+<li>메인은 모든 웹페이지들을 관리한다.</li>
+</ul>
+</li>
+<li>Renderer<ul>
+<li>Renderer는 다른 Renderer process에 영향을주지않음</li>
+<li>Renderer process는 웹페이지에 GUI 동작을 수행하기위해서 <code>IPC</code>를 통해서 메인프로세스와 같이 통신한다. Renderer로부터 직접 GUI 관련 api호출은 보안관신사나/리소스 누수 때문에 제한하고있다.
+ ※ 프로세스간의 통신은 IPC(inter-Process Communication) 모듈이용한다.</li>
+</ul>
+</li>
+<li><code>ipMain</code>/<code>ipcRenderer</code></li>
+</ul>
+<h2 id="api_1">API</h2>
+<ul>
+<li>Electron API : Main/Renderer 에서 사용되는 모듈들..</li>
+<li>election API 접근</li>
+<li>창을 생성하기 위해 메인에서 이용되는 <code>BrowserWindow</code> 클래스 호출 </li>
+</ul>
+<pre><code class="language-javascript">    const {app, BrowserWindow} = require('electron');
+    const win = new BrowserWindow();
+</code></pre>
+<ul>
+<li>Renderer로부터 메인프로세스 호출하기위해서는 IPC 모듈사용</li>
+</ul>
+<pre><code class="language-javascript">    //메인프로세스영역
+    const { ipcMain } = require('electron');
+
+    //이벤트
+    ipcMain.handle('perform-action',(evtent, args)=&gt;{
+        // ...do actions on behalf of the Renderer
+    });
+
+    // Renderer 프로세스 
+    const { ipcRenderer } = require('electron');
+
+    ipcRenderer.invoke('perform-action', ...args);
+
+</code></pre>
+<p>※ 메인 프로세스에서 오는 요청들을 검증하기위해서 중요한 api이다.</p>
+<h2 id="nodejs-api">Node.js API</h2>
+<ul>
+<li>Renderer로부터 nodejs api에 접근하기 위해서는 main.js에 <code>nodeIntegration</code> 설정 <code>true</code> 와 <code>contextIsolation</code> <code>false</code> 로 설정하여야 한다.</li>
+<li>remote content를 로드하기위해서 Renderer에 nodejs api에 접근은 보안상 이유로 추천하지않음.</li>
+<li>일렉트론은 모든 nodejs api 에 접근가능</li>
+</ul>
+<pre><code class="language-javascript">const fs = require('fs')
+
+const root = fs.readdirSync('/')
+
+console.log(root)
+
+</code></pre>
+<h2 id="notification">Notification</h2>
+<ul>
+<li>3가지 os는 유저에게 <code>notification</code>을 app에 보내주는 기능을 제공.</li>
+<li><code>notification</code>을 보여주는 기술은 Main/Renderer에 따라 차이가있다.</li>
+<li>Renderer - <code>HTML5 Notification API</code> 사용하여 noti 처리</li>
+<li>
+<p>Main - <code>Notification</code> 사용하여 noti 처리</p>
+</li>
+<li>
+<p>Main noti</p>
+</li>
+<li>해당 예제 메인 실행시 메인창을열고 noti정보를보여준다.</li>
+</ul>
+<pre><code class="language-javascript">function showNotification () {
+    const notification = {
+      title: 'Basic Notification',
+      body: 'Notification from the Main process'
+    }
+    new Notification(notification).show()
+  }
+
+app.whenReady().then(createWindow).then(showNotification)
+</code></pre>
+<ul>
+<li>Renderer에 noti</li>
+<li>로드되는 페이지에 해당js 추가시 페이지 랜더시 해당 noti가 발생함.</li>
+</ul>
+<pre><code class="language-javascript">const myNotification = new Notification('Title', {
+    body: 'Notification from the Renderer process'
+  })
+
+myNotification.onclick = () =&gt; {
+console.log('Notification clicked')
+}
+
+</code></pre>
+<ul>
+<li>
+<p>os에 따라서 미묘하게 사용 차이가 있음</p>
+</li>
+<li>
+<p>고급알림</p>
+</li>
+<li>electron-windows-notifications - 스터디필요<ul>
+<li>ToastNotification</li>
+<li>TileNotification</li>
+</ul>
+</li>
+<li>알림 보낼수 있는지 여부감지 userland모듈 <code>electron-notification-state</code> 사용</li>
+</ul>
+<h2 id="recent-documents">Recent Documents</h2>
+<ul>
+<li>최근 문서 목록 보여주는곳에 보여짐.</li>
+</ul>
+<pre><code class="language-javascript">const { app } = require('electron')
+
+//최근문서 목록 추가
+app.addRecentDocument('/Users/USERNAME/Desktop/work.type')
+
+//최근문서 목록 clear
+app.clearRecentDocuments()
+</code></pre>
+<h2 id="custom-dock-menu">Custom Dock Menu</h2>
+<ul>
+<li>아이콘 context메뉴에 추가되는거같은데 production버전에서봐야할듯 </li>
+</ul>
+<pre><code class="language-javascript">const {Menu} = require('electron');
+const dockMenu = Menu.buildFromTemplate([
+  {
+    label: 'New Window',
+    click () { console.log('New Window') }
+  }, {
+    label: 'New Window with Settings',
+    submenu: [
+      { label: 'Basic' },
+      { label: 'Pro' }
+    ]
+  },
+  { label: 'New Command...' }
+])
+
+app.whenReady().then(() =&gt; {
+  if (process.platform === 'darwin') {
+    app.dock.setMenu(dockMenu)
+  }
+}).then(createWindow)
+</code></pre>
+<h2 id="window-taskbar">Window TaskBar</h2>
+<pre><code class="language-javascript">const { app } = require('electron')
+
+//set tasks
+app.setUserTasks([
+  {
+    program: process.execPath,
+    arguments: '--new-window',
+    iconPath: process.execPath,
+    iconIndex: 0,
+    title: 'New Window',
+    description: 'Create a new window'
+  }
+])
+
+//clear tasks
+app.setUserTasks([]);
+</code></pre>
+<h2 id="onlineoffline-event-detection">Online/Offline Event Detection</h2>
+<ul>
+<li>온/오프라인 체크</li>
+<li>런처 실행시 online은되는 offline은 어떻게 체크되는지 파악필요</li>
+</ul>
+<h2 id="native-file-drag-drop">Native File Drag &amp; Drop</h2>
+<ul>
+<li></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../socket/socketio/" class="btn btn-neutral" title="SocketIO"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../socket/socketio/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

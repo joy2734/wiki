@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>ReactNative - Wiki</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ReactNative";
+    var mkdocs_page_input_path = "reactnative/reactnative.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../mkdocs/">Mkdocs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../webDevInit/">DevInitConfig</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../material/materialui/">MaterialUI</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../material/theming/">MaterialUITheme</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../react/react/">React</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../js/javascript/">JavaScript</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">ReactNative</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">설치 및 환경설정</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">코드</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#navigator">Navigator</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#header-bar">Header Bar 설정</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../socket/socketio/">SocketIO</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../electron/electronDocs/">Electron</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>ReactNative</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="react-native">REACT-NATIVE</h1>
+<h2 id="_1">설치 및 환경설정</h2>
+<ul>
+<li>페이스북에서 만든 오픈 소스 모바일 응용 프로그램.(크로스 플랫폼)</li>
+<li>네이티브코드 &gt; js번들 &gt; 브릿지 &gt; Native thread
+                                &gt; Js thread</li>
+<li>번들만드는방법</li>
+<li>Expo CLI<ul>
+<li>장점</li>
+<li>개발환경 구축 용이/실제 개발이 쉽고 편함</li>
+<li>단점</li>
+<li>OS 레이어와 직접 상호작용 불가능(Java, Kotlin, Obj-C, Swift로 추가 작성불가)</li>
+<li>Expo에서 제공해주는 모듈만 사용가능</li>
+<li>Expo Client에서는 잘동작하지만 실제 시뮬레이터 및 단말기에서는 동작 하지않을 수있음.</li>
+<li>개발관점에서 <code>자유도가 낮음</code></li>
+</ul>
+</li>
+<li>
+<p>React Native CLI(choice)</p>
+<ul>
+<li>장점<ul>
+<li>Expo로는 접근하지 못하는 Native 기능 접근가능(Native모듈 사용 자유도 높음)</li>
+<li>원하는 언어로 추가 작성 가능(커스텀 네이티브 모듈 사용가능)</li>
+<li>필요한 기능이 있는 경우 모듈 직접 제작가능</li>
+<li>OS Layer와 직접 상호작용 가능</li>
+</ul>
+</li>
+<li>단점<ul>
+<li>초기 개발환경 구축 및 실제 앱 개발 시간 소요</li>
+<li>Mac일 경우에만 안드/ios지원</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>환경구축</p>
+<ul>
+<li>nvm(node 버전 매니저)</li>
+<li>nodejs</li>
+<li>npm(node package manager)</li>
+<li>안드로이드 스튜디오 -Android Debug Bridge version 1.0.41 adb</li>
+<li>자바</li>
+<li>XCode &gt; mac에서설치가능 ios용프로그램</li>
+<li>vscode</li>
+<li>cocoapod &gt; mac에서설치가능 ios용프로그램</li>
+<li>React native cli</li>
+</ul>
+</li>
+<li>
+<p>새프로젝트 생성</p>
+<ul>
+<li>react-native init --version 0.61.5 [프로젝트명] 설치  프로젝트명 대쉬(-)사용불가</li>
+</ul>
+</li>
+<li>
+<p>안드/IOS 에뮬레이터 사용법</p>
+<ul>
+<li>ios</li>
+<li>npm start</li>
+<li>react-native run-ios (새로고침 cmd +r, cmd + d 디버깅)</li>
+<li><code>react-native run-ios --simulator="iPhone 8 Plus"</code> (다른 모델 버전 구동시 )</li>
+<li>android</li>
+<li>android 에뮬레이터 실행 후</li>
+<li>
+<p>react-native run-andorid (r 새로고침, cmd +m 디버깅)</p>
+</li>
+<li>
+<p>bash_profile 환경변수적용</p>
+</li>
+<li>source ~/.bash_profile</li>
+</ul>
+</li>
+</ul>
+<h2 id="_2">코드</h2>
+<ul>
+<li>
+<p>View</p>
+<ul>
+<li>화면을 채우는 컨테이너 같은 역활. <div> 와비슷.</li>
+<li>높이나,길이,마진등 사용시 소숫점사용불가</li>
+</ul>
+</li>
+<li>
+<p>style </p>
+<ul>
+<li>inline방식</li>
+<li>StyleSheet 활용하여 클래스로 지정</li>
+</ul>
+</li>
+<li>
+<p>touch Event</p>
+<ul>
+<li>TouchableOpacity - View바깥을 해당 태그로 감싸서 이벤트를 추가</li>
+<li>onPress</li>
+<li>onLongPress - 길게눌러야 이벤트발생</li>
+<li>onPressIn - 누르자마자 바로반응.</li>
+<li>onPressout - 터지가 떨어질때 이벤트발생.</li>
+<li>TouchalbeWidthFeedback - 클릭이벤트 발생시 투명해지는효과가 X</li>
+<li>스타일이먹지 안먹기때문에 VIEW에적용해야함.</li>
+<li>Text에도 onPress가능</li>
+</ul>
+</li>
+<li>
+<p>Button</p>
+<ul>
+<li>title 속성 필수 </li>
+<li>onPress 이벤트.</li>
+</ul>
+</li>
+<li>
+<p>ScrollView (V)</p>
+<ul>
+<li>화면박으로 컴포넌트 넘어갓을때사용</li>
+<li>넘어가는 컴포넌트를 ScrollView 컴포넌트사이에 넣기</li>
+<li>onMomentumScrollBegin 이벤트 : 스크롤 이동후 놓을때 이벤트발생</li>
+<li>onMomentumScrollEnd</li>
+<li>onScroll : 스크롤움직임 발생할때 trigger해줌.</li>
+<li>onContentSizeChange : 스크롤뷰의 사이즈변동시 발생 (width, height) =&gt;{}</li>
+<li>bounces={true} : 스크롤후 통통튀는 기능.(디폴트 true)</li>
+</ul>
+</li>
+<li>
+<p>TextInput</p>
+<ul>
+<li>value: TextInput 입력값을 가져옴</li>
+<li>onChangeText: 택스트변경시 호출.</li>
+<li>multiline={true} : 글자수 길어질때 개행해줌</li>
+<li>maxLength : 입력값 길이제한</li>
+<li>autoCapitalize={'none'} : 앞글자 대문자 자동수정 방지</li>
+<li>editable : 수정가능하게</li>
+</ul>
+</li>
+<li>
+<p>Picker</p>
+<ul>
+<li>콤보박스처럼 여러값중 고르는기능</li>
+<li>React-native community 에서 picker 설치</li>
+<li>Picker 안에 <Picker.item label="" value="" />-&gt;select의 option 과 비슷</li>
+<li>selectedValue를 지정해서 해당 선택된 값이 먼지 알수잇따.</li>
+<li>onValueChange={(val, idx) =&gt;{}}</li>
+</ul>
+</li>
+<li>
+<p><code>React-native community 깃헙 !!! -필요한것들 다운받아사용</code></p>
+</li>
+<li>
+<p>Slider</p>
+<ul>
+<li><code>npm install @react-native-community/slider --save</code></li>
+<li>cd ios &gt; npx pod-install</li>
+<li>props<ul>
+<li>value:초기값</li>
+<li>minimumValue: 최소값</li>
+<li>maximumValue: 최대값</li>
+<li>onValueChange: (value)=&gt;{setState({값})}</li>
+<li>minimumTrackintColor: 최소값쪽 슬라이더 바 컬러</li>
+<li>maximumTrackintColor: 최대값쪽 슬라이더 바 컬러</li>
+<li>step: 몇단위로 슬라이드될것인지 설정</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>ActivityIndicator(react-native 모듈)</p>
+<ul>
+<li>size: "large"</li>
+<li>color: 색상선택</li>
+<li>animating: true</li>
+</ul>
+</li>
+<li>
+<p>Image (react-native 모듈)</p>
+<ul>
+<li>source : 경로설정 or 임포트로 이미지가져오기 or {uri:'url경로'}</li>
+<li>source에 inline으로줄때는 source={require('상대경로')}</li>
+<li>style 설정</li>
+<li>resizeMode: cover,contain,stretch,repeat,center</li>
+<li>onLoadEnd: 이미지로딩이 끝낫후 트리거 해주는 이벤트</li>
+</ul>
+</li>
+<li>
+<p>Modal</p>
+<ul>
+<li>props</li>
+<li>visible: true일때 모달 활성화</li>
+<li>animationType<ul>
+<li>none, slide, fade</li>
+</ul>
+</li>
+<li>onShow: 모달이 보여질때 발생하시는 이벤트</li>
+</ul>
+</li>
+</ul>
+<h2 id="navigator">Navigator</h2>
+<ul>
+<li>
+<p>React Navigation(React-Native 공식문서 에서 해당 라이브러리 사용하라고 명시되어있음, 강의에서는 v5사용)</p>
+<ul>
+<li>설치</li>
+<li>npm install @react-navigation/native</li>
+<li>npm install react-native-reanimated react-native-gesture-handler react-native-screens react...(공식문서참조.)<ul>
+<li>ios</li>
+<li>cd ios &gt; npx pod-install ios</li>
+</ul>
+</li>
+<li>App.js위에<ul>
+<li>react-native-gesture-handle 임포트</li>
+</ul>
+</li>
+<li>npm install @react-navigation/stack - Stack Navigator 설치</li>
+</ul>
+</li>
+<li>
+<p>Stack Navigator</p>
+<ul>
+<li>NavigationContainer - 네비게이션 구조/상태 관리 컴포넌트</li>
+<li>createStackNavigator - </li>
+<li></li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-javascript">  const Stack = createStackNavigator();
+
+  .. extends Component{
+    &lt;NavigationContainer&gt;
+      &lt;Stack.Navigator&gt;
+          &lt;Stack.Screen name=&quot;Home&quot; component={HomeComponent}&gt;
+          &lt;Stack.Screen name=&quot;User&quot; component={UserComponent}&gt;
+      &lt;/Stack.Navigator&gt;
+    &lt;/NavigationContainer&gt;
+  }
+
+</code></pre>
+<ul>
+<li>버튼클릭시 화면이동<ul>
+<li>this.props.navigation.navigate(Stack Screen의 이름)</li>
+</ul>
+</li>
+<li>화면이동시 params 넘기는법<ul>
+<li>this.props.navigation.navigate(Stack Screen의 이름, params)</li>
+<li>받는쪽 </li>
+</ul>
+</li>
+<li>Stack.Navigator initialRouteName 속성에 지정하는컴포넌트가 초기에 나옴</li>
+<li>Strack.Screen initialParams로 초기 파라미터 설정가능 (navigator시 아무것도 넘기지않아도)</li>
+</ul>
+<h2 id="header-bar">Header Bar 설정</h2>
+<ul>
+<li>Strack.Screen <code>options</code> 속성 헤더바 title 설정 가능</li>
+<li>
+<p>해당화면에서 <code>this.props.navigation.setOptions({title:'11', headerStyle:{스타일정의},headerTintColor:'red', headerTitleStyle:{택스트스타일설정}})</code> 로 해당 속성 상태 변경가능</p>
+</li>
+<li>
+<p>공통적으로 헤더바 스타일을 적용하는법</p>
+<ul>
+<li>Stack.Navigator 의 <code>screenOptions</code> 속성사용 위에 객체 키는 동일...</li>
+<li>공통으로 적용하고 다른스타일로 적용할 컴포넌트만 setOptions or Strack.screen options 를 사용하여 특정화면만 커스터마이징.</li>
+</ul>
+</li>
+<li>
+<p>헤더 바에 그림삽입</p>
+<ul>
+<li>해당 강의 <code>flaticon</code> 사용하여 삽입하였음</li>
+<li>Stack.Screen 안에 options={headerTitle: <code>컴포넌트</code>}</li>
+<li>뒤로가기버튼도 컴포넌트 이미지가 들어가는걸 막고싶을때는 해당화면의 this.props.navigator.setOptions({headerBackTitle}) headerBackTitle속성 설정</li>
+</ul>
+</li>
+<li>
+<p>HeaderBar 버튼추가</p>
+<ul>
+<li><code>headerRight</code> jsx로 버튼추가</li>
+<li>해당 구현시 상단 오른족에 버튼이 추가된다.
+```javascript
+<Strack.Screen
+  headerRight:()=>(
+    <Button
+      title="Info"
+      onPress={()=> 함수정의}
+    &gt;
+    </Button>
+  )<blockquote>
+<p></Strack.Screen>
+```</p>
+</blockquote>
+</li>
+<li>더많은 옵션이 있음 레퍼런스 참조.</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../socket/socketio/" class="btn btn-neutral float-right" title="SocketIO">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../js/javascript/" class="btn btn-neutral" title="JavaScript"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../js/javascript/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../socket/socketio/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

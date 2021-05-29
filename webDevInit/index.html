@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>DevInitConfig - Wiki</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "DevInitConfig";
+    var mkdocs_page_input_path = "webDevInit.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mkdocs/">Mkdocs</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">DevInitConfig</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#init-project">init Project</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#react-install">React Install</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#babel-install">Babel Install</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#webpack-install">Webpack Install</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#hot-module-reload">Hot Module Reload</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#packagejson">웹팩, 바벨, package.json 초기설정</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../material/materialui/">MaterialUI</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../material/theming/">MaterialUITheme</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../react/react/">React</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../js/javascript/">JavaScript</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../reactnative/reactnative/">ReactNative</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socket/socketio/">SocketIO</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../electron/electronDocs/">Electron</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>DevInitConfig</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="webpack-react-meterial-ui-bootstrap">Webpack + React + Meterial UI + Bootstrap  초기세팅</h1>
+<p><br>
+<br></p>
+<h2 id="init-project">init Project</h2>
+<ul>
+<li>exec<br />
+<code>npm init</code></li>
+</ul>
+<p><br>
+<br></p>
+<h2 id="react-install">React Install</h2>
+<ul>
+<li><code>react</code> - React 라이브러리</li>
+<li><code>react-dom</code> - React Dom이 rendering 할 수 있게 도와준다.</li>
+</ul>
+<p><br></p>
+<ul>
+<li>exec<br />
+<code>yarn add react react-dom</code></li>
+</ul>
+<p><br>
+<br></p>
+<h2 id="babel-install">Babel Install</h2>
+<ul>
+<li><code>@babel/core</code> - 리액트는 ES6를 사용하므로 크로스브라우징이 가능하도록 ES5 문법으로 바꿔줌</li>
+<li><code>@babel/preset-react</code> - jsx를 javascript로 변환해준다.</li>
+<li><code>@babel/preset-env</code></li>
+<li>ES6를 ES5로 변환해준다.</li>
+<li>ES6만이 아니라 브라우저에 따라서 컴파일해준다.</li>
+<li><code>babel-loader</code></li>
+<li>자바스크립트 파일을 babel preset/plugin 과 webpack을 사용하여 ES5로 컴파일 해주는 플러그인.</li>
+<li>jsx를 javascript로 변환해준다.</li>
+<li>
+<p>html webpack plugin
+<br></p>
+</li>
+<li>
+<p>exec<br />
+<code>npm install --save-dev @babel/core babel-loader @babel/preset-react @babel/preset-env</code></p>
+</li>
+</ul>
+<p><br>
+<br></p>
+<h2 id="webpack-install">Webpack Install</h2>
+<ul>
+<li><code>webpack</code> - 모든 리액트 파일을 컴파일된 <code>하나의 자바스크립트 파일</code>(index.js)에 번들링 함.</li>
+<li><code>webpack-dev-server</code> - 개발시 소스변경시 <code>live reload</code> 해주는 기능</li>
+<li><code>webpack-cli</code> - build 스크립트를 통하여 webpack 커맨드를 사용한다.</li>
+<li><code>html-webpack-plugin</code> - webpack.config.js 에서 사용되는 플러그인.</li>
+</ul>
+<p><code>--save-dev</code> : 개발 환경에서만 사용되는 라이브러리에 옵션 사용.
+<br></p>
+<ul>
+<li>exec<br />
+<code>npm install --save-dev webpack webpack-dev-server webpack-cli html-webpack-plugin</code></li>
+</ul>
+<h2 id="hot-module-reload">Hot Module Reload</h2>
+<p>개발시 소스가 저장될때 마다 자동으로 Reload해주는 기능
+<br></p>
+<ul>
+<li>React Hot Loader 사용</li>
+<li>.babelrc에 해당 소스 추가</li>
+</ul>
+<pre><code>  {
+    &quot;plugins&quot;: [&quot;react-hot-loader/babel&quot;]
+  }
+</code></pre>
+<ol>
+<li>루트 컴포넌트에 <code>react-hot-loader</code> 임포트.</li>
+</ol>
+<pre><code>  import { hot } from 'react-hot-loader/root';
+
+  const App = () =&gt; &lt;div&gt;Hello World!&lt;/div&gt;;
+  export default hot(App);
+</code></pre>
+<ol>
+<li>webpack.config.js 에 entry에 <code>react-hot-loader/patch</code> 추가</li>
+</ol>
+<pre><code>  module.exports = {
+    entry: ['react-hot-loader/patch', '메인entry.js'],
+  };
+</code></pre>
+<p>※ 리로딩 설정옵션 - 해당소스추가시 reload를 on/off할 수 있다.(미동작하는 것 같음)
+  ```
+  import { setConfig } from 'react-hot-loader';</p>
+<p>setConfig({
+    reloadHooks: false,
+  });
+  ```</p>
+<ul>
+<li>wepack Hmr사용시 - dev옵션에 hot 설정을 true 로변경</li>
+</ul>
+<pre><code>  module.exports = {
+    devServer: {
+      hot: true
+    }
+  }
+</code></pre>
+<p><br>
+<br>
+<br></p>
+<h2 id="packagejson">웹팩, 바벨, package.json 초기설정</h2>
+<ul>
+<li>package.json</li>
+</ul>
+<pre><code class="language-javascript">{
+  &quot;name&quot;: &quot;react-meterial-web&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;meterial web example&quot;,
+  &quot;main&quot;: &quot;index.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;webpack serve&quot;,
+    &quot;build&quot;: &quot;webpack build&quot;,
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+  },
+  &quot;repository&quot;: {
+    &quot;type&quot;: &quot;git&quot;,
+    &quot;url&quot;: &quot;git+https://github.com/joy2734/react-meterial-web.git&quot;
+  },
+  &quot;author&quot;: &quot;hjjoo&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;bugs&quot;: {
+    &quot;url&quot;: &quot;https://github.com/joy2734/react-meterial-web/issues&quot;
+  },
+  &quot;homepage&quot;: &quot;https://github.com/joy2734/react-meterial-web#readme&quot;,
+  &quot;dependencies&quot;: {
+    &quot;@hot-loader/react-dom&quot;: &quot;^17.0.1&quot;,
+    &quot;babel-cli&quot;: &quot;^6.26.0&quot;,
+    &quot;babel-core&quot;: &quot;^6.26.3&quot;,
+    &quot;babel-loader&quot;: &quot;^7.0.0&quot;,
+    &quot;babel-polyfill&quot;: &quot;^6.26.0&quot;,
+    &quot;babel-preset-env&quot;: &quot;^1.7.0&quot;,
+    &quot;babel-preset-es2015&quot;: &quot;^6.24.1&quot;,
+    &quot;babel-preset-react&quot;: &quot;^6.24.1&quot;,
+    &quot;babel-preset-react-hmre&quot;: &quot;^1.1.1&quot;,
+    &quot;babel-preset-stage-0&quot;: &quot;^6.24.1&quot;,
+    &quot;css-loader&quot;: &quot;^5.0.1&quot;,
+    &quot;expose-loader&quot;: &quot;^2.0.0&quot;,
+    &quot;express&quot;: &quot;^4.17.1&quot;,
+    &quot;file-loader&quot;: &quot;^6.2.0&quot;,
+    &quot;html-webpack-plugin&quot;: &quot;^4.4.0&quot;,
+    &quot;json-server&quot;: &quot;^0.16.3&quot;,
+    &quot;node-sass&quot;: &quot;^5.0.0&quot;,
+    &quot;react&quot;: &quot;^17.0.1&quot;,
+    &quot;react-dom&quot;: &quot;^17.0.1&quot;,
+    &quot;react-hot-loader&quot;: &quot;^4.13.0&quot;,
+    &quot;sass-loader&quot;: &quot;^10.1.1&quot;,
+    &quot;style-loader&quot;: &quot;^2.0.0&quot;,
+    &quot;url-loader&quot;: &quot;^4.1.1&quot;,
+    &quot;webpack-dev-middleware&quot;: &quot;^4.1.0&quot;,
+    &quot;webpack-dev-server&quot;: &quot;^3.11.0&quot;,
+    &quot;webpack-hot-middleware&quot;: &quot;^2.25.0&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@material-ui/core&quot;: &quot;^4.11.3&quot;,
+    &quot;@material-ui/icons&quot;: &quot;^4.11.2&quot;,
+    &quot;babel-register&quot;: &quot;^6.26.0&quot;,
+    &quot;bootstrap&quot;: &quot;^4.6.0&quot;,
+    &quot;chokidar&quot;: &quot;^3.5.1&quot;,
+    &quot;react-bootstrap&quot;: &quot;^1.4.3&quot;,
+    &quot;react-percent-bar&quot;: &quot;^0.0.2&quot;,
+    &quot;react-redux&quot;: &quot;^7.2.2&quot;,
+    &quot;react-router-dom&quot;: &quot;^5.2.0&quot;,
+    &quot;redux&quot;: &quot;^4.0.5&quot;,
+    &quot;redux-actions&quot;: &quot;^2.6.5&quot;,
+    &quot;semantic-ui-css&quot;: &quot;^2.4.1&quot;,
+    &quot;semantic-ui-react&quot;: &quot;^2.0.3&quot;,
+    &quot;ts-loader&quot;: &quot;^9.1.1&quot;,
+    &quot;underscore&quot;: &quot;^1.12.1&quot;,
+    &quot;webpack&quot;: &quot;^4.46.0&quot;,
+    &quot;webpack-cli&quot;: &quot;^4.6.0&quot;,
+    &quot;webpack-node-externals&quot;: &quot;^3.0.0&quot;
+  }
+}
+</code></pre>
+<ul>
+<li>webpack.config.js</li>
+</ul>
+<pre><code>var webpack = require('webpack');
+var path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+module.exports = {
+  mode: 'development',
+  resolve:{
+    alias:{
+      'react-dom': '@hot-loader/react-dom'
+    }
+  },
+  entry: [
+    'react-hot-loader/patch',
+    './src/index.js'
+  ],
+  output: {
+    path: __dirname + '/dist',
+    filename: 'main.js'
+  },
+  devServer: {
+    hot: true,
+    inline: true,
+    port: 3000,
+    publicPath: '/'
+    //contentBase: __dirname + '/dist/'
+  },
+  module: {
+        rules: [
+        {
+          test: /\.js$|\.jsx?$/,
+          loaders: ['babel-loader'],
+          include: path.join(__dirname, 'src')
+        },
+        {
+          test: /\.less$/,
+          loader: 'style-loader!css-loader!less-loader'  // use ! to chain loaders
+        },
+        {
+          test: /\.css$/,
+          loader: 'style-loader!css-loader'
+        },
+        {
+          test: /\.scss$/,
+          loader: 'style-loader!css-loader!sass-loader'
+        },
+        {
+          test: /\.(png|jpg)$/,
+          loader: 'url-loader?limit=8192' // inline base64 URLs for &lt;=8k images, direct URLs for the rest
+        },
+        {
+          test: /\.(ttf|eot|svg|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,          
+          loader: 'file-loader'
+        },
+        {
+          test: require.resolve(&quot;underscore&quot;),
+          loader: &quot;expose-loader&quot;,
+          options: {
+            exposes: {
+              globalName: &quot;_.filter&quot;,
+              moduleLocalName: &quot;filter&quot;,
+            },
+          },
+        }
+      ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: 'body',
+      template: path.resolve(__dirname, './src/index.html'),
+      filename: path.resolve(__dirname, './dist/index.html')
+    }),
+    new webpack.HotModuleReplacementPlugin()
+  ]
+}
+</code></pre>
+<ul>
+<li>.babelrc</li>
+</ul>
+<pre><code>{
+    &quot;presets&quot;:[&quot;env&quot;,&quot;react&quot;,&quot;es2015&quot;, &quot;stage-0&quot;],
+    &quot;env&quot;:{
+       &quot;development&quot;:{
+          &quot;presets&quot;:[&quot;react-hmre&quot;]
+       }
+    },
+    &quot;plugins&quot;: [&quot;react-hot-loader/babel&quot;]
+ }
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../material/materialui/" class="btn btn-neutral float-right" title="MaterialUI">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../mkdocs/" class="btn btn-neutral" title="Mkdocs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../mkdocs/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../material/materialui/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
